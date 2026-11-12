@@ -38,11 +38,16 @@ npm run poster     # render public/posters/<id>.webp from each GLB
 
 `npm run poster` uses Playwright's Chromium. Set `CHROMIUM_PATH` if you want to use a Chromium that's already installed.
 
-To add a model:
+To add a model from a USDZ file:
 
-1. Put `<id>.glb` and `<id>.usdz` in `public/models/`.
-2. Add an entry to `MODELS` with its real size in meters.
+1. Run `npm run add-model -- path/to/model.usdz <id>`.
+   - Copies the USDZ for iPhone as is.
+   - Converts it with Blender into an Android-safe GLB: merged, welded, lightly simplified (about 1 mm), with no glTF extensions Scene Viewer would reject.
+   - Prints the size to put in `MODELS`.
+2. Add an entry to `MODELS` in `src/models.ts`.
 3. Run `npm run poster`.
+
+Scene Viewer limits: no mesh compression, under 10 MB recommended (15 MB max), under 100k triangles recommended.
 
 ## QR code
 

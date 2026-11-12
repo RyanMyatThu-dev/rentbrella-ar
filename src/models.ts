@@ -25,6 +25,15 @@ export const MODELS: ArModel[] = [
     poster: '/posters/station.webp',
     size: { width: 1.2, height: 1.42, depth: 0.62 },
   },
+  {
+    id: 'station-v1-1',
+    name: 'Rentbrella v1.1',
+    description: 'Station design, version 1.1.',
+    glb: '/models/station-v1-1.glb',
+    usdz: '/models/station-v1-1.usdz',
+    poster: '/posters/station-v1-1.webp',
+    size: { width: 1.17, height: 1.83, depth: 2.12 },
+  },
 ]
 
 export function findModel(id: string | null) {
